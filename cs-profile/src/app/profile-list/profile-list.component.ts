@@ -12,20 +12,20 @@ export class ProfileListComponent implements OnInit {
   constructor() { 
     this.profiles = [
       {
-        img_path: "../../assets/images/temp.png", name:"Stephen Sladek",
+        img_path: "../../assets/images/anon.jpg", name:"Stephen Sladek",
         location:"Gordonville, MO",college_status:"Senior",
         languages:"C, C++, C#, Java, JavaScript",interests:"Virtual Reality",
         organizations:"ACM-SEMO, CS Club, SIGAI"
       },
       {
-        img_path: "../../assets/images/temp.png", name:"",
-        location:"",college_status:"",
+        img_path: "../../assets/images/anon.jpg", name:"Anonymous",
+        location:"---",college_status:"---",
         languages:"",interests:"",
         organizations:""
       },
       {
-        img_path: "../../assets/images/temp.png", name:"",
-        location:"",college_status:"",
+        img_path: "../../assets/images/anon.jpg", name:"Anonymous",
+        location:"---",college_status:"---",
         languages:"",interests:"",
         organizations:""
       },
