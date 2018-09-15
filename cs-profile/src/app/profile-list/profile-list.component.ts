@@ -24,6 +24,12 @@ export class ProfileListComponent implements OnInit {
         organizations:""
       },
       {
+        img_path: "../../assets/images/Derek_Mandl.jpg", name:"Derek Mandl",
+        location:"Manchester, MO",college_status:"Senior",
+        languages:"C, C++, Java, Python",interests:"Compilers, Static Languages",
+        organizations:"ACM-SEMO"
+      },
+      {
         img_path: "../../assets/images/anon.jpg", name:"Anonymous",
         location:"---",college_status:"---",
         languages:"",interests:"",
