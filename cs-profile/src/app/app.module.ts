@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ProfileListComponent } from './profile-list/profile-list.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { ProfileListComponent } from './profile-list/profile-list.component';
     ProfileListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
