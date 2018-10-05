@@ -5,7 +5,7 @@ import { ProfileListComponent} from './profile-list/profile-list.component';
 
 const routes: Routes = [ 
   {path: '', component: ProfileListComponent},
-  { path: 'profile', component:  ProfileComponent  },
+  { path: 'profile/:id', component:  ProfileComponent  },
   { path: 'profilelist', component:  ProfileListComponent  }
  ];
 

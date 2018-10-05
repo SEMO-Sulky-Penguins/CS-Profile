@@ -1,19 +1,32 @@
-<div class="card w-100">
+<div *ngIf="profile">
+  
+  <div class="card w-100 border border-danger">
     <div class="card-body">
-        <h4 class="card-title text-center">
+      <h4 class="card-title text-center">
           {{profile.name}}
         </h4>
-        <hr/>
+        <hr />
         <img class="card-img-top"
-              style="height:100px; width:100px; float:left;"
+              style="height:350px; width:350px; float:left; margin:50px"
               src="{{profile.img_path}}" />
-        <span style="max-width:55%; float:right">
+        <span style="max-width:55%; float:right; margin: 50px">
           <p class="card-text">
-            {{profile.college_status}}
+            College Status: {{profile.college_status}}
           </p>
           <p class="card-text">
-            {{profile.location}}
-          </p></span>
-      <a href="#" class="btn btn-primary">Contact {{profile.name}}</a>
+            Hometown: {{profile.location}}
+          </p>
+          <p class="card-text">
+            Experience with Programming Language(s): {{profile.languages}}
+          </p>
+          <p class="card-text">
+            Interests: {{profile.interests}}
+          </p>
+        </span>
+    </div>
+    <div class="card-footer" style="text-align: center">
+    <a routerLink="/profilelist" class="btn" style="width:200px; margin-right: 7.5px; border-color: black">Back</a>
+    <a href="#" class="btn" style="width:200px; margin-left: 7.5px; border-color: black">Contact {{profile.name}}</a>
     </div>
   </div>
+</div>

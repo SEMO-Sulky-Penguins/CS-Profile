@@ -2,3 +2,11 @@
     background-color: #EA212D;
     text-align: center;
 }
+
+.card-title a{
+    color: #EA212D;
+}
+
+.card-title a:hover{
+    color: black;
+}

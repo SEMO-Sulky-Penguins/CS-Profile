@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ProfileListComponent } from './profile-list/profile-list.component';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule }    from '@angular/common/http';
 
 @NgModule({
   declarations: [
