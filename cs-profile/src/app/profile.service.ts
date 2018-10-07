@@ -1,32 +1,49 @@
 import { Injectable } from '@angular/core';
-
 import {Profile} from './profile';
-import {PROFILES} from './mock-profiles';
+//import {PROFILES} from './mock-profiles';
 import { Observable, of } from 'rxjs';
+import { MessageService } from './message.service';
+import {HttpClient, HttpParams, HttpHeaders} from '@angular/common/http';
 
-import {HttpClient, HttpParams} from '@angular/common/http';
+const httpOptions = {
+  headers: new HttpHeaders({'Content-Type': 'application/json'})
+};
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProfileService {
-//private _url = "/assets/data/profiles.json";
+  //private _url = "/assets/data/profiles.json";
+  private profilesURL = 'api/profiles';
+  //private identity : string;
 
-  constructor(private _http: HttpClient) {  }
+  constructor(private _http: HttpClient, 
+    private messageService : MessageService) {  }
 
-  getProfiles(): Observable<Profile[]> {
-    //this works:
-    //return this._http.get<Profile[]>(this._url);
-    return of(PROFILES);
+  private log(message: string) {
+    this.messageService.add(`ProfileService: ${message}`);
   }
 
-  //I'm not sure how to use httpget to grab profile by id;
-  //Commented out is my attempt
+  getProfiles(): Observable<Profile[]>{
+    return this._http.get<Profile[]>(this.profilesURL);
+  }
+
+  getProfile(id : number): Observable<Profile[]>{
+    const url = `${this.profilesURL}/${id}`;
+    return this._http.get<Profile[]>(url);
+  }
+
+/*
+  getProfiles(): Observable<Profile[]> {
+    //return of(PROFILES);
+  }
+
   getProfile(id: number): Observable<Profile> {
-    //this does not work:
-    //var identity = id.toString().trim();
-    //const params = new HttpParams().set('id', identity);
-    //return this._http.get<Profile>(this._url, {params});
+    this.identity = id.toString().trim();
+    const params = new HttpParams().set('id', this.identity);
+    return this._http.get<Profile>(this._url, {params});
+    
     return of(PROFILES.find(profile => profile.id === id));
   }
+*/
 }

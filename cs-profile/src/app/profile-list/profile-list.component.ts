@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+
 import {Profile} from '../profile';
 import {ProfileService} from '../profile.service';
 
@@ -13,13 +16,22 @@ export class ProfileListComponent implements OnInit {
 
   profiles: Profile[];
 
-  constructor(private profileService: ProfileService) {}
+  constructor(
+    private route : ActivatedRoute,
+    private profileService: ProfileService,
+    private location: Location) {}
 
   getProfiles(): void {
     this.profileService.getProfiles()
     .subscribe(profiles => this.profiles = profiles);
   }
-
+  /*
+  getProfile : void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.profileService.getProfile(id)
+    .subscribe(profile => this.profile = profile);
+  }
+  */
   ngOnInit() {
     this.getProfiles()
   }
