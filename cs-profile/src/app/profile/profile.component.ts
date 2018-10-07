@@ -13,24 +13,25 @@ import { ProfileService }  from '../profile.service';
 })
 export class ProfileComponent implements OnInit {
   @Input() profile: Profile;
-  profiles : Profile[];
+  //profiles : Profile[];
 
   constructor(  private route: ActivatedRoute,
-    private profileService: ProfileService,
-    private location: Location) { }
+    private profileService: ProfileService) { }
 
   ngOnInit() {
-    this.getProfiles();
+    this.getProfile();
   }
-  /*
-  getProfiles(): void {
+  
+  getProfile(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.profileService.getProfiles(id)
+    this.profileService.getProfile(id)
       .subscribe(profile => this.profile = profile)
   }
-  */
-  getProfiles() : void {
-    this.profileService.getProfiles()
+  
+ /*
+  getProfile(id : number) : void {
+    this.profileService.getProfile(id)
     .subscribe(profiles => this.profiles = profiles);
   }
+  */
 }

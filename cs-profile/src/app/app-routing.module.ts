@@ -4,9 +4,9 @@ import { ProfileComponent } from './profile/profile.component';
 import { ProfileListComponent} from './profile-list/profile-list.component';
 
 const routes: Routes = [ 
-  {path: '', component: ProfileListComponent},
-  { path: 'profile/:id', component:  ProfileComponent  },
-  { path: 'profilelist', component:  ProfileListComponent  }
+  {path: '', redirectTo: 'profiles', pathMatch: 'full' },
+  { path: 'profiles/:id', component:  ProfileComponent  },
+  { path: 'profiles', component:  ProfileListComponent  }
  ];
 
 @NgModule({

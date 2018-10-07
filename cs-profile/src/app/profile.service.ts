@@ -28,9 +28,9 @@ export class ProfileService {
     return this._http.get<Profile[]>(this.profilesURL);
   }
 
-  getProfile(id : number): Observable<Profile[]>{
+  getProfile(id : number): Observable<Profile>{
     const url = `${this.profilesURL}/${id}`;
-    return this._http.get<Profile[]>(url);
+    return this._http.get<Profile>(url);
   }
 
 /*
