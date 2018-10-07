@@ -18,7 +18,7 @@ export class InMemoryDataService implements InMemoryDbService {
             img_path: "../../assets/images/anon.jpg", name:"Anonymous",
             major:"Cybersecurity",
             location:"---",college_status:"Freshman",
-            languages:[],interests:[],organizations:[]
+            languages:["---"],interests:["---"],organizations:["---"]
           },
           {
             id: 3,
@@ -33,31 +33,31 @@ export class InMemoryDataService implements InMemoryDbService {
             id: 4,
             img_path: "../../assets/images/anon.jpg", name:"Anonymous",
             major:"---",location:"---",college_status:"---",
-            languages:[],interests:[],organizations:[]
+            languages:["---"],interests:["---"],organizations:["---"]
           },
           {
             id: 5,
             img_path: "../../assets/images/anon.jpg", name:"Anonymous",
             major:"---",location:"---",college_status:"---",
-            languages:[],interests:[],organizations:[]
+            languages:["---"],interests:["---"],organizations:["---"]
           },
           {
             id: 6,
             img_path: "../../assets/images/anon.jpg", name:"Anonymous",
             major:"---",location:"---",college_status:"---",
-            languages:[],interests:[],organizations:[]
+            languages:["---"],interests:["---"],organizations:["---"]
           },
           {
             id: 7,
             img_path: "../../assets/images/anon.jpg", name:"Anonymous",
             major:"---",location:"---",college_status:"---",
-            languages:[],interests:[],organizations:[]
+            languages:["---"],interests:["---"],organizations:["---"]
           },
           {
             id: 8,
             img_path: "../../assets/images/anon.jpg", name:"Anonymous",
             major:"---",location:"---",college_status:"---",
-            languages:[],interests:[],organizations:[]
+            languages:["---"],interests:["---"],organizations:["---"]
           }
     ];
 
