@@ -4,24 +4,28 @@
   <div class="card-deck justify-content-center">
     <div *ngFor="let profile of profiles" >
       <div class="card border border-danger" style="height: 15em; width: 18em; margin:0.5em;">
-        <div class="card-body">
-          <h4 class="card-title text-center">
-            <a routerLink="/profile/{{profile.id}}">{{profile.name}}</a>
-          </h4>
-          <hr/>
-          <img class="card-img-top"
-          style="height:100px; width:100px; float:left;"
-          src="{{profile.img_path}}" />
-          <span style="max-width:55%; float:right">
-            <p class="card-text">
-              {{profile.college_status}}
-            </p>
-            <p class="card-text">
-              {{profile.location}}
-            </p>
-          </span>
-        </div>
+        <a routerLink="/profile/{{profile.id}}" class="profileCard">
+          <div class="card-body">
+            <h4 class="card-title text-center">
+              {{profile.name}}
+            </h4>
+            <hr/>
+            <img class="card-img-top"
+            style="height:100px; width:100px; float:left;"
+            src="{{profile.img_path}}" />
+            <span style="max-width:55%; float:right">
+              <p class="card-text">
+                {{profile.college_status}}
+              </p>
+              <p class="card-text">
+                {{profile.major}}
+              </p>
+              <p class="card-text">
+                {{profile.location}}
+              </p>
+            </span>
+          </div>
+        </a>
       </div>
     </div>
   </div>
-

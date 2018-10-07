@@ -10,3 +10,12 @@
 .card-title a:hover{
     color: black;
 }
+
+.profileCard, .profileCard:hover, .profileCard:visited {
+    text-decoration: none;
+    color: #000000;
+    transition: color 0.3s;
+}
+.profileCard:hover {
+    color: #EA212D;
+}

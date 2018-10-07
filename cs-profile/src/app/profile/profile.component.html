@@ -6,30 +6,51 @@
           {{profile.name}}
         </h4>
         <hr />
-        <img class="card-img-top"
-              style="height:350px; width:350px; float:left; margin:50px"
-              src="{{profile.img_path}}" />
-        <span style="max-width:55%; float:right; margin: 50px">
-          <p class="card-text">
-            College Status: {{profile.college_status}}
-          </p>
-          <p class="card-text">
-            Hometown: {{profile.location}}
-          </p>
-          <p class="card-text">
-            Experience with Programming Language(s): {{profile.languages}}
-          </p>
-          <p class="card-text">
-            Interests: {{profile.interests}}
-          </p>
-          <p class="card-text">
-            Organizations: {{profile.organizations}}
-          </p>
-        </span>
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <img class="card-img-top"
+                style="height:350px; width:350px;"
+                src="{{profile.img_path}}" />
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <span>
+            <p class="card-text">
+              College Status: {{profile.college_status}}
+            </p>
+            <p class="card-text">
+              Hometown: {{profile.location}}
+            </p>
+            <p class="card-text">
+              Experience with Programming Language(s): <br/>
+              <span *ngFor="let language of profile.languages">
+                <span class="arrayItem">
+                  {{language}}
+                </span>
+              </span>
+            </p>
+            <p class="card-text">
+              Interests: <br/>
+              <span *ngFor="let interest of profile.interests">
+                <span class="arrayItem">
+                  {{interest}}
+                </span>
+              </span>
+            </p>
+            <p class="card-text">
+              Organizations: <br/>
+              <span *ngFor="let organization of profile.organizations">
+                <span class="arrayItem">
+                  {{organization}}
+                </span>
+              </span>
+            </p>
+          </span>
+        </div>
+      </div>
     </div>
     <div class="card-footer" style="text-align: center">
-    <a routerLink="/profilelist" class="btn" style="width:200px; margin-right: 7.5px; border-color: black">Back</a>
-    <a href="#" class="btn" style="width:200px; margin-left: 7.5px; border-color: black">Contact {{profile.name}}</a>
+      <a routerLink="/profilelist" class="btn" style="width:200px; margin-right: 7.5px; border-color: black">Back</a>
+      <a href="#" class="btn" style="width:200px; margin-left: 7.5px; border-color: black">Contact {{profile.name}}</a>
     </div>
   </div>
 </div>
