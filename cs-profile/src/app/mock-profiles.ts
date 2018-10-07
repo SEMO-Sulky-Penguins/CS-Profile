@@ -19,7 +19,7 @@ export const PROFILES: Profile[] = [{
         img_path: "../../assets/images/Derek_Mandl.jpg", name:"Derek Mandl",
         location:"Manchester, MO",college_status:"Senior",
         languages:"C, C++, Java, Python",interests:"Compilers, Static Languages",
-        organizations:"ACM-SEMO"
+        organizations:"ACM-SEMO, Camera Arts Association"
       },
       {
         id: 4,
