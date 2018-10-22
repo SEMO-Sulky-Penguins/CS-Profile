@@ -16,7 +16,7 @@
           <span>
             <p class="card-text">
               College Status: <br/>
-              <span class="arrayItem"> {{profile.college_status}}</span>
+              <span class="arrayItem"> {{profile.collegeStatus}}</span>
             </p>
             <p class="card-text">
               Hometown: <br/>
@@ -24,27 +24,36 @@
             </p>
             <p class="card-text">
               Experience with Programming Language(s): <br/>
-              <!--<span *ngFor="let language of profile.languages">-->
+              <span class="arrayItem">{{profile.languages}}</span>
+              <!--
+              <span *ngFor="let language of profile.languages">
                 <span class="arrayItem">
-                  {{profile.languages}}
+                  {{language}}
                 </span>
-              <!--</span>-->
+              </span>
+              -->
             </p>
             <p class="card-text">
               Interests: <br/>
-              <!--<span *ngFor="let interest of profile.interests">-->
+              <span class="arrayItem">{{profile.interests}}</span>
+              <!--
+              <span *ngFor="let interest of profile.interests">
                 <span class="arrayItem">
-                  {{profile.interests}}
+                  {{interest}}
                 </span>
-              <!--</span>-->
+              </span>
+              -->
             </p>
             <p class="card-text">
               Organizations: <br/>
-              <!--<span *ngFor="let organization of profile.organizations">-->
+              <span class="arrayItem">{{profile.organizations}}</span>
+              <!--
+              <span *ngFor="let organization of profile.organizations">
                 <span class="arrayItem">
-                  {{profile.organizations}}
+                  {{organization}}
                 </span>
-              <!--</span>-->
+              </span>
+              -->
             </p>
           </span>
         </div>

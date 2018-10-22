@@ -1,10 +1,15 @@
 export class Profile {
   id: number;
-  img_path: string;
+  imgPath: string;
   name: string;
   major: string;
   location: string;
-  college_status: string;
+  collegeStatus: string;
+  /*
+  languages: Array<string>;
+  interests: Array<string>;
+  organizations: Array<string>;
+  */
   languages: string;
   interests: string;
   organizations: string;

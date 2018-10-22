@@ -1,3 +1,4 @@
+/*
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Profile } from './profile';
 
@@ -9,8 +10,8 @@ export class InMemoryDataService implements InMemoryDbService {
             img_path: "../../assets/images/anon.jpg", name:"Stephen Sladek",
             major:"Information Systems",
             location:"Gordonville, MO",college_status:"Senior",
-            languages:"C, C++, C#, Java, JavaScript",
-            interests:"Virtual Reality, Biometrics",
+            languages:["C","C++", "C#", "Java", "JavaScript"],
+            interests:["Virtual Reality", "Biometrics"],
             organizations:["ACM-SEMO", "CS Club", "SIGAI"]
           },
           {
@@ -25,8 +26,8 @@ export class InMemoryDataService implements InMemoryDbService {
             img_path: "../../assets/images/Derek_Mandl.jpg", name:"Derek Mandl",
             major:"Computer Science",
             location:"Manchester, MO",college_status:"Senior",
-            languages:"C, C++, Java, Python",
-            interests:"Compilers Static Languages",
+            languages:["C", "C++", "Java", "Python"],
+            interests:["Compilers", "Static Languages"],
             organizations:["ACM-SEMO", "Camera Arts Association"]
           },
           {
@@ -73,3 +74,4 @@ export class InMemoryDataService implements InMemoryDbService {
     return profiles.length > 0 ? Math.max(...profiles.map(profile => profile.id)) + 1 : 11;
   }
 }
+*/

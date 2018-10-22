@@ -25,7 +25,13 @@ export class ProfileListComponent implements OnInit {
     this.profileService.getProfiles()
     .subscribe(profiles => this.profiles = profiles);
   }
-  
+  /*
+  getProfile : void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.profileService.getProfile(id)
+    .subscribe(profile => this.profile = profile);
+  }
+  */
   ngOnInit() {
     this.getProfiles()
   }

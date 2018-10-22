@@ -6,10 +6,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { ProfileListComponent } from './profile-list/profile-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule }    from '@angular/common/http';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './in-memory-data.service';
-import { HttpModule } from '@angular/http';//added on 9/30/2018 for accessing backend asp.net core api
-
+//import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+//import { InMemoryDataService }  from './in-memory-data.service';
 
 @NgModule({
   declarations: [
@@ -21,10 +19,11 @@ import { HttpModule } from '@angular/http';//added on 9/30/2018 for accessing ba
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpModule
-    //HttpClientInMemoryWebApiModule.forRoot(
-      //InMemoryDataService, { dataEncapsulation: false }
-    //)
+    /*
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    )
+    */
   ],
   providers: [],
   bootstrap: [AppComponent]
