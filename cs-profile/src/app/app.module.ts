@@ -8,6 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule }    from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
+import { HttpModule } from '@angular/http';//added on 9/30/2018 for accessing backend asp.net core api
+
 
 @NgModule({
   declarations: [
@@ -19,9 +21,10 @@ import { InMemoryDataService }  from './in-memory-data.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    )
+    HttpModule
+    //HttpClientInMemoryWebApiModule.forRoot(
+      //InMemoryDataService, { dataEncapsulation: false }
+    //)
   ],
   providers: [],
   bootstrap: [AppComponent]

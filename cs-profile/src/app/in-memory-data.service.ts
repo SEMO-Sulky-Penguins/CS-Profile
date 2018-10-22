@@ -9,8 +9,8 @@ export class InMemoryDataService implements InMemoryDbService {
             img_path: "../../assets/images/anon.jpg", name:"Stephen Sladek",
             major:"Information Systems",
             location:"Gordonville, MO",college_status:"Senior",
-            languages:["C","C++", "C#", "Java", "JavaScript"],
-            interests:["Virtual Reality", "Biometrics"],
+            languages:"C, C++, C#, Java, JavaScript",
+            interests:"Virtual Reality, Biometrics",
             organizations:["ACM-SEMO", "CS Club", "SIGAI"]
           },
           {
@@ -25,8 +25,8 @@ export class InMemoryDataService implements InMemoryDbService {
             img_path: "../../assets/images/Derek_Mandl.jpg", name:"Derek Mandl",
             major:"Computer Science",
             location:"Manchester, MO",college_status:"Senior",
-            languages:["C", "C++", "Java", "Python"],
-            interests:["Compilers", "Static Languages"],
+            languages:"C, C++, Java, Python",
+            interests:"Compilers Static Languages",
             organizations:["ACM-SEMO", "Camera Arts Association"]
           },
           {

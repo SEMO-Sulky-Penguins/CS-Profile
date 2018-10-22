@@ -5,7 +5,7 @@ export class Profile {
   major: string;
   location: string;
   college_status: string;
-  languages: Array<string>;
-  interests: Array<string>;
-  organizations: Array<string>;
+  languages: string;
+  interests: string;
+  organizations: string;
 }
