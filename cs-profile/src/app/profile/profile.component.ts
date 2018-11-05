@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { ProfileService }  from '../profile.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-profile',
@@ -13,12 +14,26 @@ import { ProfileService }  from '../profile.service';
 })
 export class ProfileComponent implements OnInit {
   @Input() profile: Profile;
+  profiles: any;
   //profiles : Profile[];
 
   constructor(  private route: ActivatedRoute,
-    private profileService: ProfileService) { }
+    private profileService: ProfileService,
+    private http: HttpClient) { }
 
   ngOnInit() {
+    let token = localStorage.getItem("jwt");
+    this.http.get("https://localhost:44305/api/profiles", {
+      headers: new HttpHeaders({
+        "Authorization": "Bearer " + token,
+        "Content-Type": "application/json"
+      })
+    }).subscribe(response => {
+      this.profiles = response;
+    }, err => {
+      console.log(err)
+    });
+
     this.getProfile();
   }
   

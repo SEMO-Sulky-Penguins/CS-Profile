@@ -13,7 +13,8 @@ import { ProfileDetailComponent } from './profile-detail/profile-detail.componen
 
 import { JwtModule } from '@auth0/angular-jwt';
 import { RouterModule } from '@angular/router';
-//import { AuthGuard } from './auth-guard/auth-guard.service';
+import { AuthGuard } from './auth-guard/auth-guard.service';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 export function tokenGetter(){
   return localStorage.getItem('access_token');
@@ -41,8 +42,8 @@ export function tokenGetter(){
     }),
     RouterModule.forRoot([
       {path:'',component:ProfileListComponent},
-      {path: 'login', component: LoginComponent}
-      //{path:'profile-details',component: ProfileDetailComponent, canActivate: [AuthGuard]}
+      {path: 'login', component: LoginComponent},
+      {path:'profile-details',component: ProfileDetailComponent, canActivate: [AuthGuard]}
     ])
     /*
     HttpClientInMemoryWebApiModule.forRoot(
@@ -50,7 +51,7 @@ export function tokenGetter(){
     )
     */
   ],
-  providers: [],
+  providers: [JwtHelperService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

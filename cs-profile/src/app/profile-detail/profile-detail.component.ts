@@ -32,6 +32,9 @@ goBack(): void {
 }
 
 save(): void {
+  //var id = this.profile.id;
+  //id, img path, name, major, location, college status, lang, inter, organiz
+  //this.ProfileService.updateProfile(new Profile(id, )).subscribe(() => this.goBack());
   this.ProfileService.updateProfile(this.profile)
     .subscribe(() => this.goBack());
 }
