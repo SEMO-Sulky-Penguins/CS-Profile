@@ -15,7 +15,7 @@ export class LoginComponent {
 
   login(form: NgForm) {
     let credentials = JSON.stringify(form.value);
-    this.http.post("https://localhost:5001/api/Auth/login", credentials, {
+    this.http.post("https://localhost:44305/api/auth/login", credentials, {
       headers: new HttpHeaders({
         "Content-Type": "application/json"
       })
@@ -26,6 +26,7 @@ export class LoginComponent {
       this.router.navigate(["/"]);
     }, err => {
       this.invalidLogin = true;
+      console.log(err);
     });
   }
 

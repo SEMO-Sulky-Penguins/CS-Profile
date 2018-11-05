@@ -8,10 +8,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule }    from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { ProfileDetailComponent } from './profile-detail/profile-detail.component';
-//import { LoginComponent } from './login/login.component';
-//import { LoginComponent } from './login/login.component';
 //import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 //import { InMemoryDataService }  from './in-memory-data.service';
+
+import { JwtModule } from '@auth0/angular-jwt';
+import { RouterModule } from '@angular/router';
+//import { AuthGuard } from './auth-guard/auth-guard.service';
+
+export function tokenGetter(){
+  return localStorage.getItem('access_token');
+}
 
 @NgModule({
   declarations: [
@@ -20,14 +26,24 @@ import { ProfileDetailComponent } from './profile-detail/profile-detail.componen
     ProfileListComponent,
     LoginComponent,
     ProfileDetailComponent,
-    //LoginComponent,
-    //LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter : tokenGetter,
+        whitelistedDomains: ['localhost:44305'],
+        blacklistedRoutes: ['localhost:44305/auth/']
+      }
+    }),
+    RouterModule.forRoot([
+      {path:'',component:ProfileListComponent},
+      {path: 'login', component: LoginComponent}
+      //{path:'profile-details',component: ProfileDetailComponent, canActivate: [AuthGuard]}
+    ])
     /*
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
