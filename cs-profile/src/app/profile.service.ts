@@ -46,4 +46,18 @@ export class ProfileService {
     return of(PROFILES.find(profile => profile.id === id));
   }
 */
+
+  /** PUT: update the hero on the server */
+  updateProfile (profile: Profile | number): Observable<any> {
+    const id = typeof profile === 'number' ? profile : profile.id;
+    const url = `${this.profilesURL}/${id}`;
+
+    //return this.http.put(this.heroesUrl, hero, httpOptions).pipe(
+      return this._http.put(url, profile, httpOptions);//.pipe(  
+     // tap(_ => this.log(`updated hero id=${hero.id}`)),
+      //tap(_ => this.log(`updated hero id=${id}`)),
+      //catchError(this.handleError<any>('updateHero'))
+    //);
+  }
+
 }

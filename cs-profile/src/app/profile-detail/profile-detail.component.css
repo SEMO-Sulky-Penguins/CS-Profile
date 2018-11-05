@@ -1,0 +1,8 @@
+.card-footer button{
+    background-color:#EA212D;
+    color: #fff;
+}
+
+.card-footer button:hover{
+    background-color: #be0101;
+}
