@@ -6,6 +6,9 @@ import { ProfileComponent } from './profile/profile.component';
 import { ProfileListComponent } from './profile-list/profile-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule }    from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+//import { LoginComponent } from './login/login.component';
+//import { LoginComponent } from './login/login.component';
 //import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 //import { InMemoryDataService }  from './in-memory-data.service';
 
@@ -13,7 +16,10 @@ import { HttpClientModule }    from '@angular/common/http';
   declarations: [
     AppComponent,
     ProfileComponent,
-    ProfileListComponent
+    ProfileListComponent,
+    LoginComponent
+    //LoginComponent,
+    //LoginComponent
   ],
   imports: [
     BrowserModule,

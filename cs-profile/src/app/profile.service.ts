@@ -16,7 +16,7 @@ export class ProfileService {
   //private _url = "/assets/data/profiles.json";
   //private profilesURL = 'api/profiles';
   //private identity : string;
-  private profilesURL = 'http://localhost:65063/api/profiles';
+  private profilesURL = 'http://localhost:65064/api/profiles';
   constructor(private _http: HttpClient, 
     private messageService : MessageService) {  }
 
