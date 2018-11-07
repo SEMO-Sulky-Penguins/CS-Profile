@@ -39,12 +39,7 @@ export function tokenGetter(){
         whitelistedDomains: ['localhost:44305'],
         blacklistedRoutes: ['localhost:44305/auth/']
       }
-    }),
-    RouterModule.forRoot([
-      {path:'',component:ProfileListComponent},
-      {path: 'login', component: LoginComponent},
-      {path:'profile-details',component: ProfileDetailComponent, canActivate: [AuthGuard]}
-    ])
+    })
     /*
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }

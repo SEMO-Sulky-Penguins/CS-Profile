@@ -21,7 +21,7 @@ export class LoginComponent {
       })
     }).subscribe(response => {
       let token = (<any>response).token;
-      localStorage.setItem("jwt", token);
+      localStorage.setItem("jwt", JSON.stringify(token));
       this.invalidLogin = false;
       this.router.navigate(["/"]);
     }, err => {

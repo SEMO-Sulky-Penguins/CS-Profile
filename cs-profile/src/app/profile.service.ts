@@ -5,8 +5,16 @@ import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 import {HttpClient, HttpParams, HttpHeaders} from '@angular/common/http';
 
-const httpOptions = {
-  headers: new HttpHeaders({'Content-Type': 'application/json'})
+import { JwtModule } from '@auth0/angular-jwt';
+import { AuthGuard } from './auth-guard/auth-guard.service';
+import { JwtHelperService } from '@auth0/angular-jwt';
+
+let token =  localStorage.getItem("jwt");
+const httpOptions = {  
+  headers: new HttpHeaders({
+    "Authorization": "Bearer " + token,
+    'Content-Type': 'application/json'
+  })
 };
 
 @Injectable({
@@ -59,5 +67,29 @@ export class ProfileService {
       //catchError(this.handleError<any>('updateHero'))
     //);
   }
+/*
+  isUserAuthenticated() {
+    let token: string = localStorage.getItem("jwt");
+    if (token && !this.jwtHelper.isTokenExpired(token)) {
+      console.log(this.jwtHelper.decodeToken(token));
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+*/
 
+/*let token = localStorage.getItem("jwt");
+    this.http.get("https://localhost:44305/api/profiles", {
+      headers: new HttpHeaders({
+        "Authorization": "Bearer " + token,
+        "Content-Type": "application/json"
+      })
+    }).subscribe(response => {
+      this.profiles = response;
+    }, err => {
+      console.log(err)
+    });
+    */
 }
