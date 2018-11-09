@@ -11,8 +11,4 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class AppComponent {
   title = 'cs-profile';
-
-  logout(){
-    localStorage.removeItem("jwt");
-  }
 }

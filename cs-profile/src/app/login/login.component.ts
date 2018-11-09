@@ -10,8 +10,9 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginComponent {
   invalidLogin: boolean;
+  loggedIn : boolean = false;
 
-  constructor(private router: Router, private http: HttpClient) { }
+  constructor(private router: Router, private http: HttpClient) {}
 
   login(form: NgForm) {
     let credentials = JSON.stringify(form.value);
@@ -23,11 +24,18 @@ export class LoginComponent {
       let token = (<any>response).token;
       localStorage.setItem("jwt", JSON.stringify(token));
       this.invalidLogin = false;
+      this.loggedIn = true;
       this.router.navigate(["/"]);
     }, err => {
       this.invalidLogin = true;
+      this.loggedIn = false;
       console.log(err);
     });
+  }
+
+  logout(){
+    this.loggedIn = false;
+    localStorage.removeItem("jwt");
   }
 
 }
