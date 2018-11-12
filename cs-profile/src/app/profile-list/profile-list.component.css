@@ -1,7 +1,19 @@
 #title {    
     background-color: #EA212D;
     text-align: center;
+    color: #1A1A1A;
 }
+    #title h1 {
+        font-weight: 900;
+    }
+    #title hr {
+        border-color:#A00000;
+        border-width: 2px;
+        width:50%;
+    }
+    #title h2 {
+        font-size: large;
+    }
 
 .card-title a{
     color: #EA212D;

@@ -10,9 +10,9 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginComponent {
   invalidLogin: boolean;
-  loggedIn : boolean = true;
+  loggedIn : boolean = false;
 
-  constructor(private router: Router, private http: HttpClient) {  }
+  constructor(private router: Router, private http: HttpClient) {}
 
   login(form: NgForm) {
     let credentials = JSON.stringify(form.value);
