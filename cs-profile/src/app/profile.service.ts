@@ -9,7 +9,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { AuthGuard } from './auth-guard/auth-guard.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
-let token =  localStorage.getItem("jwt");
+let token = localStorage.getItem("jwt");
 const httpOptions = {  
   headers: new HttpHeaders({
     "Authorization": "Bearer " + token,
@@ -25,9 +25,11 @@ export class ProfileService {
   //private profilesURL = 'api/profiles';
   //private identity : string;
   private profilesURL = 'https://localhost:44305/api/profiles';
+  
   constructor(private _http: HttpClient, 
-    private messageService : MessageService) {  }
-
+    private messageService : MessageService,
+    private jwtHelper: JwtHelperService) {  }
+  
   private log(message: string) {
     this.messageService.add(`ProfileService: ${message}`);
   }
@@ -61,20 +63,34 @@ export class ProfileService {
     const url = `${this.profilesURL}/${id}`;
 
     //return this.http.put(this.heroesUrl, hero, httpOptions).pipe(
-      return this._http.put(url, profile, httpOptions);//.pipe(  
-     // tap(_ => this.log(`updated hero id=${hero.id}`)),
-      //tap(_ => this.log(`updated hero id=${id}`)),
-      //catchError(this.handleError<any>('updateHero'))
+    return this._http.put(url, profile, httpOptions);
+    //.pipe(  
+    //tap(_ => this.log(`updated hero id=${hero.id}`)),
+    //tap(_ => this.log(`updated hero id=${id}`)),
+    //catchError(this.handleError<any>('updateHero'))
     //);
   }
+
+  updateProfileAuth(profile: Profile | number) : void {
+    const id = typeof profile === 'number' ? profile : profile.id;
+    const url = `${this.profilesURL}/${id}`;
+    console.log("passing value: " + id + " to " + url);
+    this._http.put(url, profile, httpOptions).subscribe(response => {
+      console.log(response);
+    }, err => {
+      console.log(err)
+    });
+  }
 /*
-  isUserAuthenticated() {
-    let token: string = localStorage.getItem("jwt");
+  isUserAuthenticated() : boolean {
     if (token && !this.jwtHelper.isTokenExpired(token)) {
       console.log(this.jwtHelper.decodeToken(token));
       return true;
     }
     else {
+      if(this.jwtHelper.isTokenExpired(token)){
+        console.log("token expired or does not exist");
+      }
       return false;
     }
   }

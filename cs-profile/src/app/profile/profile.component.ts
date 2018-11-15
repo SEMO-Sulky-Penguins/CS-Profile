@@ -18,12 +18,17 @@ export class ProfileComponent implements OnInit {
 
   constructor(  private route: ActivatedRoute,
     private profileService: ProfileService,
-    private http: HttpClient) { }
+    private http: HttpClient,
+    private location: Location) { }
 
   ngOnInit() {
     this.getProfile();
   }
   
+  goBack(): void {
+    this.location.back();
+  }
+
   getProfile(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.profileService.getProfile(id)

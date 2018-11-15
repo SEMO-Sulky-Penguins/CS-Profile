@@ -4,7 +4,6 @@ import { Location } from '@angular/common';
 
 import {Profile} from '../profile';
 import {ProfileService} from '../profile.service';
-import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
   selector: 'app-profile-list',
@@ -20,8 +19,7 @@ export class ProfileListComponent implements OnInit {
   constructor(
     private route : ActivatedRoute,
     private profileService: ProfileService,
-    private location: Location,
-    private jwtHelper: JwtHelperService) {}
+    private location: Location) {}
 
   getProfiles(): void {
     this.profileService.getProfiles()

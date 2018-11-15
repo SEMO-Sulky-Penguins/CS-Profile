@@ -13,27 +13,26 @@ import {Profile} from '../profile';
 export class ProfileDetailComponent implements OnInit {
   @Input() profile: Profile;
   constructor(private route: ActivatedRoute,
-    private ProfileService: ProfileService,
-    private location: Location
-) { }
+    private profileService: ProfileService,
+    private location: Location) { }
 
-ngOnInit(): void {
-  this.getProfile();
-}
+  ngOnInit(): void {
+    this.getProfile();
+  }
 
-getProfile(): void {
-  const id = +this.route.snapshot.paramMap.get('id');
-  this.ProfileService.getProfile(id)
-    .subscribe(profile => this.profile = profile);
-}
+  getProfile(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.profileService.getProfile(id)
+      .subscribe(profile => this.profile = profile);
+  }
 
-goBack(): void {
-  this.location.back();
-}
+  goBack(): void {
+    this.location.back();
+  }
 
-save(): void {
-  this.ProfileService.updateProfile(this.profile)
-    .subscribe(() => this.goBack());
-}
+  save(): void {
+    this.profileService.updateProfileAuth(this.profile);
+      //.subscribe(() => this.goBack());
+  }
 
 }

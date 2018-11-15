@@ -3,55 +3,54 @@
     <div class="card w-100 border border-danger">
       <div class="card-body">
         <h4 class="card-title text-center">
-          Update {{profile.name}}'s Profile Information</h4>
-          <hr />
-          <div class="row">
+          Update {{profile.name}}'s Profile Information
+        </h4>
+        <hr />
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <img class="card-img-top"
+            style="height:350px; width:350px;"
+            src="{{profile.imgPath}}" />
+          </div>
+          <div>
             <div class="col-lg-6 col-md-6 col-sm-12">
-              <img class="card-img-top"
-              style="height:350px; width:350px;"
-              src="{{profile.imgPath}}" />
+              <p class="card-text">
+                <label>name: 
+                  <input [(ngModel)]="profile.name" placeholder="name"/>
+                </label><br/></p>
+              <p class="card-text">
+                <label>major: 
+                  <input [(ngModel)]="profile.major" placeholder="major"/>
+                </label><br/></p>
+              <p class="card-text">
+                <label>location: 
+                  <input [(ngModel)]="profile.location" placeholder="location"/>
+                </label><br/></p>
+              <p class="card-text">
+                <label>College Status: 
+                  <input [(ngModel)]="profile.collegeStatus" placeholder="collegeStatus"/>
+                </label><br/></p>
+              <p class="card-text">
+                <label>languages: 
+                  <input [(ngModel)]="profile.languages" placeholder="languages"/>
+                </label><br/></p>
+              <p class="card-text">
+                <label>interests: 
+                  <input [(ngModel)]="profile.interests" placeholder="interests"/>
+                </label><br/></p>
+              <p class="card-text">
+                <label>organizations:
+                  <input [(ngModel)]="profile.organizations" placeholder="organizations"/>
+                </label><br/></p>
+              </div>
             </div>
-            <!--<h4 class="card-title text-center">
-                  {{profile.name | uppercase}} Details</h4>
-                  <div><span>id: </span>{{profile.id}}</div>-->
-                  <div>
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                      <p class="card-text">
-                        <label>name: 
-                          <input [(ngModel)]="profile.name" placeholder="name"/>
-                        </label><br/></p>
-                        <p class="card-text">
-                          <label>major: 
-                            <input [(ngModel)]="profile.major" placeholder="major"/>
-                          </label><br/></p>
-                          <p class="card-text">
-                            <label>location: 
-                              <input [(ngModel)]="profile.location" placeholder="location"/>
-                            </label><br/></p>
-                            <p class="card-text">
-                              <label>College Status: 
-                                <input [(ngModel)]="profile.collegeStatus" placeholder="collegeStatus"/>
-                              </label><br/></p>
-                              <p class="card-text">
-                                <label>languages: 
-                                  <input [(ngModel)]="profile.languages" placeholder="languages"/>
-                                </label><br/></p>
-                                <p class="card-text">
-                                  <label>interests: 
-                                    <input [(ngModel)]="profile.interests" placeholder="interests"/>
-                                  </label><br/></p>
-                                  <p class="card-text">
-                                    <label>organizations:
-                                      <input [(ngModel)]="profile.organizations" placeholder="organizations"/>
-                                    </label><br/></p>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+        </div>
+      </div>
 
-                            <div class="card-footer" style="text-align: center">
-                              <button class="btn" style="width:200px; margin-right: 7.5px; border-color: black"(click)="goBack()">go back</button>
-                              <button class="btn" style="width:200px; margin-right: 7.5px; border-color: black"(click)="save()">save</button>
-                            </div>
-
-
+      <div class="card-footer" style="text-align: center">
+        <button class="btn" style="width:200px; margin-right: 7.5px; border-color: black"(click)="goBack()">go back</button>
+        <button class="btn" style="width:200px; margin-right: 7.5px; border-color: black"(click)="save()">save</button>
+      </div>
+    </div>
+  </div>
+</div>

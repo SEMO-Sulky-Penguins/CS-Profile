@@ -1,11 +1,9 @@
 <!-- <div *ngIf="profile"> -->
-  <div>
+<div>
   <div class="card w-100 border border-danger">
     <div class="card-body">
-      <h4 class="card-title text-center">
-          {{profile.name}}
-        </h4>
-        <hr />
+      <h4 class="card-title text-center">{{profile.name}}</h4>
+      <hr />
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12">
           <img class="card-img-top"
@@ -59,10 +57,11 @@
         </div>
       </div>
     </div>
+    
     <div class="card-footer" style="text-align: center">
-      <a routerLink="/profiles" class="btn" style="width:200px; margin-right: 7.5px; border-color: black">Back</a>
+      <a (click)="goBack()" class="btn" style="width:200px; margin-right: 7.5px; border-color: black">Back</a>
       <a href="#" class="btn" style="width:200px; margin-left: 7.5px; border-color: black">Contact {{profile.name}}</a>
-      <a routerLink="/detail/{{profile.id}}" class="btn" style="width:200px; margin-left: 7.5px; border-color: black">Update</a>
+      <a href="/detail/{{profile.id}}" class="btn" style="width:200px; margin-left: 7.5px; border-color: black">Update</a>
     </div>
   </div>
 </div>
