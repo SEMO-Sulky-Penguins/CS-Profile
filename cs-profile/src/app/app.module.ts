@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule }    from '@angular/common/http';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
 import { ProfileListComponent } from './profile-list/profile-list.component';
 import { LoginComponent } from './login/login.component';
@@ -17,6 +17,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { RouterModule } from '@angular/router';
 import { AuthGuard } from './auth-guard/auth-guard.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { NewprofileComponent } from './newprofile/newprofile.component';
 
 export function tokenGetter(){
   return localStorage.getItem('access_token');
@@ -29,9 +30,11 @@ export function tokenGetter(){
     ProfileListComponent,
     LoginComponent,
     ProfileDetailComponent,
+    NewprofileComponent,
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,

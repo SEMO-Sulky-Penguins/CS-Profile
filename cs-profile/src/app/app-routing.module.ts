@@ -8,6 +8,7 @@ import { ProfileDetailComponent } from './profile-detail/profile-detail.componen
 import { JwtModule } from '@auth0/angular-jwt';
 import { AuthGuard } from './auth-guard/auth-guard.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { NewprofileComponent } from './newprofile/newprofile.component';
 /*
 RouterModule.forRoot([
   {path:'',component:ProfileListComponent},
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: '', redirectTo: 'profiles', pathMatch: 'full' },
   { path: 'profiles/:id', component:  ProfileComponent  },
   { path: 'login', component:  LoginComponent  },
+  { path: 'addprofile', component:  NewprofileComponent  },
   { path: 'detail/:id', component:  ProfileDetailComponent, canActivate: [AuthGuard] },
   { path: 'profiles', component:  ProfileListComponent  }
  ];

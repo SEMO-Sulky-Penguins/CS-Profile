@@ -81,6 +81,12 @@ export class ProfileService {
       console.log(err)
     });
   }
+
+    /** POST: add a new profile to the server */
+    addProfile (profile: Profile): Observable<Profile> {
+      return this._http.post<Profile>(this.profilesURL, profile, httpOptions);
+    }
+  
 /*
   isUserAuthenticated() : boolean {
     if (token && !this.jwtHelper.isTokenExpired(token)) {
