@@ -34,6 +34,10 @@ export class ProfileComponent implements OnInit {
     this.profileService.getProfile(id)
       .subscribe(profile => this.profile = profile)
   }
+
+  delete(){
+    this.profileService.deleteProfileAuth(this.profile.id);
+  }
   
  /*
   getProfile(id : number) : void {

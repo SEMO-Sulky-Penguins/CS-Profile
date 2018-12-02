@@ -8,6 +8,7 @@ import {HttpClient, HttpParams, HttpHeaders} from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
 import { AuthGuard } from './auth-guard/auth-guard.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 
 let token = localStorage.getItem("jwt");
 const httpOptions = {  
@@ -87,6 +88,15 @@ export class ProfileService {
       return this._http.post<Profile>(this.profilesURL, profile, httpOptions);
     }
   
+  deleteProfileAuth(id: number): void{
+    const url = `${this.profilesURL}/${id}`;
+    console.log("deleting profile: " + url);
+    this._http.delete(url, httpOptions).subscribe(/*response => {
+      console.log(response);
+    }, err =>{
+      console.log(err)
+    }*/);
+  }
 /*
   isUserAuthenticated() : boolean {
     if (token && !this.jwtHelper.isTokenExpired(token)) {
