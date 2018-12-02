@@ -24,7 +24,7 @@ export class NewprofileComponent implements OnInit {
     name: new FormControl("", [Validators.required/*, Validators.pattern('[a-zA-z0-9_\.]+@[a-zA-Z]+\.[a-zA-Z]+')*/]), 
     major: new FormControl(""/*, [Validators.required, Validators.pattern('[a-zA-z0-9_\.]+@[a-zA-Z]+\.[a-zA-Z]+')]*/),
     location: new FormControl("", [Validators.required, Validators.pattern('[a-zA-z_" "\.]+, [a-zA-Z]{2}')]), 
-    collegeStatus: new FormControl("", [Validators.required, Validators.pattern('.{6,}')]),
+    collegeStatus: new FormControl("", [Validators.required, Validators.pattern('[a-zA-Z]{6,}')]),
     languages: new FormControl(""/*, [Validators.required/*, Validators.pattern('[a-zA-z0-9_\.]+@[a-zA-Z]+\.[a-zA-Z]+')]*/),
     interests: new FormControl(""/*, [Validators.required/*, Validators.pattern('[a-zA-z0-9_\.]+@[a-zA-Z]+\.[a-zA-Z]+')]*/), 
     organizations: new FormControl(""/*, [Validators.required/*, Validators.pattern('[a-zA-z0-9_\.]+@[a-zA-Z]+\.[a-zA-Z]+')]*/),
