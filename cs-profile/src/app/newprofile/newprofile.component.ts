@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { ProfileService }  from '../profile.service';
 import {Profile} from '../profile';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-newprofile',
@@ -21,13 +21,13 @@ export class NewprofileComponent implements OnInit {
   ngOnInit() {}
   
   profileForm = new FormGroup({ 
-    name: new FormControl(), 
-    major: new FormControl(),
-    location: new FormControl(), 
-    collegeStatus: new FormControl(),
-    languages: new FormControl(),
-    interests: new FormControl(), 
-    organizations: new FormControl(),
+    name: new FormControl("", [Validators.required/*, Validators.pattern('[a-zA-z0-9_\.]+@[a-zA-Z]+\.[a-zA-Z]+')*/]), 
+    major: new FormControl(""/*, [Validators.required, Validators.pattern('[a-zA-z0-9_\.]+@[a-zA-Z]+\.[a-zA-Z]+')]*/),
+    location: new FormControl("", [Validators.required, Validators.pattern('[a-zA-z_" "\.]+, [a-zA-Z]{2}')]), 
+    collegeStatus: new FormControl("", [Validators.required, Validators.pattern('.{6,}')]),
+    languages: new FormControl(""/*, [Validators.required/*, Validators.pattern('[a-zA-z0-9_\.]+@[a-zA-Z]+\.[a-zA-Z]+')]*/),
+    interests: new FormControl(""/*, [Validators.required/*, Validators.pattern('[a-zA-z0-9_\.]+@[a-zA-Z]+\.[a-zA-Z]+')]*/), 
+    organizations: new FormControl(""/*, [Validators.required/*, Validators.pattern('[a-zA-z0-9_\.]+@[a-zA-Z]+\.[a-zA-Z]+')]*/),
   });
     
   goBack(): void {

@@ -17,37 +17,79 @@
                   <input type="text" class="form-control"  
                   placeholder="name" formControlName="name"/>
                 </p>
+                <div *ngIf="profileForm.controls['name'].invalid && (profileForm.controls['name'].dirty || profileForm.controls['name'].touched)"> 
+                  <div class="alert alert-danger" *ngIf="profileForm.controls['name'].errors.required"> This field is required </div> 
+                </div> 
+                <div *ngIf="profileForm.controls['name'].errors"> 
+                  <div class="alert alert-danger" *ngIf="profileForm.controls['name'].errors.pattern"> The name is not valid </div> 
+                </div>
                 <p class="card-text">
                   <label>Major: </label><br/>
                   <input type="text" class="form-control" 
                   placeholder="major" formControlName="major"/>
                 </p>
+                <!--<div *ngIf="profileForm.controls['major'].invalid && (profileForm.controls['major'].dirty || profileForm.controls['major'].touched)"> 
+                    <div class="alert alert-danger" *ngIf="profileForm.controls['major'].errors.required"> This field is required </div> 
+                  </div> 
+                  <div *ngIf="profileForm.controls['major'].errors"> 
+                    <div class="alert alert-danger" *ngIf="profileForm.controls['major'].errors.pattern"> The major is not valid </div> 
+                  </div>-->
                 <p class="card-text">
                   <label>Location: </label><br/>
                   <input type="text" class="form-control" 
                   placeholder="location" formControlName="location"/>
                 </p>
+                <div *ngIf="profileForm.controls['location'].invalid && (profileForm.controls['location'].dirty || profileForm.controls['location'].touched)"> 
+                    <div class="alert alert-danger" *ngIf="profileForm.controls['location'].errors.required"> This field is required </div> 
+                  </div> 
+                  <div *ngIf="profileForm.controls['location'].errors"> 
+                    <div class="alert alert-danger" *ngIf="profileForm.controls['location'].errors.pattern"> The location is not valid </div> 
+                  </div>
                 <p class="card-text">
                   <label>College Status: </label><br/>
                   <input type="text" class="form-control" 
-                  placeholder="collegeStatus" formControlName="collegeStatus"/>
+                  placeholder="college status" formControlName="collegeStatus"/>
                 </p>
+                <div *ngIf="profileForm.controls['collegeStatus'].invalid && (profileForm.controls['collegeStatus'].dirty || profileForm.controls['collegeStatus'].touched)"> 
+                    <div class="alert alert-danger" *ngIf="profileForm.controls['collegeStatus'].errors.required"> This field is required </div> 
+                  </div> 
+                  <div *ngIf="profileForm.controls['collegeStatus'].errors"> 
+                    <div class="alert alert-danger" *ngIf="profileForm.controls['collegeStatus'].errors.pattern"> The college status is not valid </div> 
+                  </div>
                 <p class="card-text">
                   <label>Languages: </label><br/>
                   <input type="text" class="form-control" 
                   placeholder="languages" formControlName="languages"/>
                 </p>
+                <!---<div *ngIf="profileForm.controls['languages'].invalid && (profileForm.controls['languages'].dirty || profileForm.controls['languages'].touched)"> 
+                    <div class="alert alert-danger" *ngIf="profileForm.controls['languages'].errors.required"> This field is required </div> 
+                  </div> 
+                  <div *ngIf="profileForm.controls['languages'].errors"> 
+                    <div class="alert alert-danger" *ngIf="profileForm.controls['languages'].errors.pattern"> This field not valid </div> 
+                  </div>-->
                 <p class="card-text">
                   <label>Interests: </label><br/>
                   <input type="text" class="form-control" 
                   placeholder="interests" formControlName="interests"/>
                 </p>
+                <!---<div *ngIf="profileForm.controls['interests'].invalid && (profileForm.controls['interests'].dirty || profileForm.controls['interests'].touched)"> 
+                    <div class="alert alert-danger" *ngIf="profileForm.controls['interests'].errors.required"> This field is required </div> 
+                  </div> 
+                  <div *ngIf="profileForm.controls['interests'].errors"> 
+                    <div class="alert alert-danger" *ngIf="profileForm.controls['interests'].errors.pattern"> This field is not valid </div> 
+                  </div>-->
                 <p class="card-text">
                   <label>Organizations: </label><br/>
                   <input type="text" class="form-control" 
                   placeholder="organizations" formControlName="organizations"/>
                 </p>
-                <button class="btn btn-primary" type="submit">Submit</button>
+                <!---<div *ngIf="profileForm.controls['organizations'].invalid && (profileForm.controls['organizations'].dirty || profileForm.controls['organizations'].touched)"> 
+                    <div class="alert alert-danger" *ngIf="profileForm.controls['organizations'].errors.required"> This field is required </div> 
+                  </div> 
+                  <div *ngIf="profileForm.controls['organizations'].errors"> 
+                    <div class="alert alert-danger" *ngIf="profileForm.controls['organizations'].errors.pattern"> This field is not valid </div> 
+                  </div>-->
+                <button class="btn btn-primary" type="submit" [disabled]="!profileForm.valid">Submit</button>
               </div>
             </div>
           </div>
