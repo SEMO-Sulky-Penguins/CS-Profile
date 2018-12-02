@@ -83,11 +83,19 @@ export class ProfileService {
     });
   }
 
-    /** POST: add a new profile to the server */
-    addProfile (profile: Profile): Observable<Profile> {
-      return this._http.post<Profile>(this.profilesURL, profile, httpOptions);
-    }
+  /** POST: add a new profile to the server */
+  addProfile (profile: Profile): Observable<Profile> {
+    return this._http.post<Profile>(this.profilesURL, profile, httpOptions);
+  }
   
+  addProfileAuth(profile: Profile) : void {
+    this._http.post<Profile>(this.profilesURL, profile, httpOptions).subscribe(response => {
+      console.log(response);
+    }, err => {
+      console.log(err)
+    });
+  }
+
   deleteProfileAuth(id: number): void{
     const url = `${this.profilesURL}/${id}`;
     console.log("deleting profile: " + url);

@@ -21,7 +21,7 @@ const routes: Routes = [
   {path: '', redirectTo: 'profiles', pathMatch: 'full' },
   { path: 'profiles/:id', component:  ProfileComponent  },
   { path: 'login', component:  LoginComponent  },
-  { path: 'addprofile', component:  NewprofileComponent  },
+  { path: 'addprofile', component:  NewprofileComponent, canActivate: [AuthGuard]  },
   { path: 'detail/:id', component:  ProfileDetailComponent, canActivate: [AuthGuard] },
   { path: 'profiles', component:  ProfileListComponent  }
  ];

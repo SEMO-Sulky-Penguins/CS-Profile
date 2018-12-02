@@ -18,6 +18,7 @@ import { RouterModule } from '@angular/router';
 import { AuthGuard } from './auth-guard/auth-guard.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { NewprofileComponent } from './newprofile/newprofile.component';
+import { PhotoUploadComponent } from './photo-upload/photo-upload.component';
 
 export function tokenGetter(){
   return localStorage.getItem('access_token');
@@ -31,6 +32,7 @@ export function tokenGetter(){
     LoginComponent,
     ProfileDetailComponent,
     NewprofileComponent,
+    PhotoUploadComponent,
   ],
   imports: [
     BrowserModule,

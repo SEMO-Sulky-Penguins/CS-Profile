@@ -11,28 +11,54 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./newprofile.component.css']
 })
 export class NewprofileComponent implements OnInit {
-  @Input() profile: Profile;
+  
+  //@Input() profile: Profile;
+
   constructor(private route: ActivatedRoute,
     private profileService: ProfileService,
     private location: Location) { }
 
-  ngOnInit() {
-  }
-  addprofile = new FormGroup({ 
+  ngOnInit() {}
+  
+  profileForm = new FormGroup({ 
     name: new FormControl(), 
     major: new FormControl(),
     location: new FormControl(), 
-    collegestatus: new FormControl(),
+    collegeStatus: new FormControl(),
     languages: new FormControl(),
     interests: new FormControl(), 
     organizations: new FormControl(),
-    });
+  });
     
   goBack(): void {
     this.location.back();
   }
-  
+
   save(): void {
-    this.profileService.addProfile(this.profile).subscribe();
+    try{
+      let profile = new Profile;
+      profile.name = this.getValue("name");
+      profile.major = this.getValue("major");
+      profile.location = this.getValue("location");
+      profile.collegeStatus = this.getValue("collegeStatus");
+      profile.languages = this.getValue("languages");
+      profile.interests = this.getValue("interests");
+      profile.organizations = this.getValue("organizations");
+      this.profileService.addProfileAuth(profile);
+      //.subscribe();
+      alert("Profile created!");
+    }
+    catch(e){
+      console.log("profile creation error:\n" + e);
+    }
   }
+
+  getValue(field : any) : string{
+    if(this.profileForm.controls[field].value != null){
+      return this.profileForm.controls[field].value.toString();
+    } else {
+      return "none";
+    }
+  }
+
 }
