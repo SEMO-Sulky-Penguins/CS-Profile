@@ -18,7 +18,8 @@ export class NewprofileComponent implements OnInit {
 
   ngOnInit() {
   }
-  addprofile = new FormGroup({ name: new FormControl(), 
+  addprofile = new FormGroup({ 
+    name: new FormControl(), 
     major: new FormControl(),
     location: new FormControl(), 
     collegestatus: new FormControl(),
@@ -26,11 +27,12 @@ export class NewprofileComponent implements OnInit {
     interests: new FormControl(), 
     organizations: new FormControl(),
     });
+    
   goBack(): void {
     this.location.back();
   }
   
   save(): void {
-    this.profileService.addProfile(this.profile);
+    this.profileService.addProfile(this.profile).subscribe();
   }
 }
