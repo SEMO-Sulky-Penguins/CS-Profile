@@ -105,31 +105,5 @@ export class ProfileService {
       console.log(err)
     }*/);
   }
-/*
-  isUserAuthenticated() : boolean {
-    if (token && !this.jwtHelper.isTokenExpired(token)) {
-      console.log(this.jwtHelper.decodeToken(token));
-      return true;
-    }
-    else {
-      if(this.jwtHelper.isTokenExpired(token)){
-        console.log("token expired or does not exist");
-      }
-      return false;
-    }
-  }
-*/
-
-/*let token = localStorage.getItem("jwt");
-    this.http.get("https://localhost:44305/api/profiles", {
-      headers: new HttpHeaders({
-        "Authorization": "Bearer " + token,
-        "Content-Type": "application/json"
-      })
-    }).subscribe(response => {
-      this.profiles = response;
-    }, err => {
-      console.log(err)
-    });
-    */
+  
 }

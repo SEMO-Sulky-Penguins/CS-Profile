@@ -1,3 +1,10 @@
-<p>
-  photo-upload works!
-</p>
+<input type="file" (change)="onFileSelected($event)" 
+  style="display: none;" #fileInput />
+
+<button class="btn" type="button" (click)="fileInput.click()">
+  Choose a File
+</button>
+
+<button class="btn" type="button" (click)="onUpload()">
+  Submit
+</button>
