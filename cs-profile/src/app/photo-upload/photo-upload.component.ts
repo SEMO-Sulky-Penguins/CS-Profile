@@ -17,13 +17,21 @@ const httpOptions = {
 
 export class PhotoUploadComponent implements OnInit {
 
+  imgUrl : string = "/assets/images/anon.jpg";
   selectedFile : File = null;
 
   constructor( private http : HttpClient) { }
   ngOnInit() {}
 
-  onFileSelected(event) {
-    this.selectedFile = <File>event.target.files[0];
+  onFileSelected(file:FileList) {
+    this.selectedFile = file.item(0);
+    var reader = new FileReader();
+    reader.onload = (event:any) => {
+      this.imgUrl = event.target.result;
+    }
+
+    reader.readAsDataURL(this.selectedFile);
+
   }
 
   onUpload() {
