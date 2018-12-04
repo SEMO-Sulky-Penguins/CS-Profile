@@ -4,13 +4,14 @@ import { Location } from '@angular/common';
 import { ProfileService }  from '../profile.service';
 import {Profile} from '../profile';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, 
+    HttpRequest, HttpResponse, HttpEventType } from '@angular/common/http';
 
 let token = localStorage.getItem("jwt");
 const httpOptions = {  
   headers: new HttpHeaders({
     "Authorization": "Bearer " + token,
-    'Content-Type': 'application/json'
+    "Content-Type": "multipart/form-data",
   })
 };
 
@@ -20,8 +21,6 @@ const httpOptions = {
   styleUrls: ['./newprofile.component.css']
 })
 export class NewprofileComponent implements OnInit {
-  
-  //@Input() profile: Profile;
 
   constructor(private route: ActivatedRoute,
     private profileService: ProfileService,
@@ -31,7 +30,7 @@ export class NewprofileComponent implements OnInit {
     imgUrl : string = "/assets/images/anon.jpg";
     selectedFile : File = null;
   
-          ngOnInit() {}
+    ngOnInit() {}
   
     onFileSelected(file:FileList) {
       this.selectedFile = file.item(0);
@@ -41,19 +40,39 @@ export class NewprofileComponent implements OnInit {
       }
   
       reader.readAsDataURL(this.selectedFile);
-  
     }
-  
-    onUpload() {
+
+  /*
+    onUpload() : void {
       let url = 'https://localhost:44305/api/images';
       const formData = new FormData();
       formData.append('image', this.selectedFile, this.selectedFile.name);
-      this.http.post(url, formData, httpOptions).subscribe( response => {
-        console.log(response);
-      });
+      if(formData == null){
+        console.log("form data is null");
+      } else {
+        this.http.post(url, formData).subscribe( response => {
+          console.log(response);
+        });
+      }
       // also update the path in the profile database
     }
-  
+  */
+
+  onUpload(files) : void {
+    if (files.length === 0)
+      return;
+
+    const formData = new FormData();
+    const imagesURL = 'https://localhost:44305/api/images';
+    console.log(imagesURL);
+    for (let file of files)
+      formData.append(file, file.name);
+
+    this.http.post(imagesURL, formData, httpOptions).subscribe(response => {
+      console.log(response);
+    });
+  }
+
   profileForm = new FormGroup({ 
     name: new FormControl("", [Validators.required/*, Validators.pattern('[a-zA-z0-9_\.]+@[a-zA-Z]+\.[a-zA-Z]+')*/]), 
     major: new FormControl(""/*, [Validators.required, Validators.pattern('[a-zA-z0-9_\.]+@[a-zA-Z]+\.[a-zA-Z]+')]*/),

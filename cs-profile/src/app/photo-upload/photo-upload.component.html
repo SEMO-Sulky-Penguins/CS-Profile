@@ -1,17 +1,20 @@
-<input type="file" (change)="onFileSelected($event.target.files)" 
-  style="display: none;" #fileInput />
-  <div class="row">
-      <div class="col-lg-6 col-md-12 col-sm-12 ">
-  <span style= "margin-left: 75px;"><img class= "text.center" [src] = "imgUrl" style ="height:350px; width:350px;"></span>
-</div></div>
-  <div class="row">
-      <div class="col-lg-6 col-md-6 col-sm-12 ">
-<button style="width:120px; margin-left: 125px; border-color: black; align-items: center" class="btn" type="button" (click)="fileInput.click()">
-  Choose a File
-</button></div>
-<div class="col-lg-6 col-md-6 col-sm-12">
-<button style="width:120px; margin-left: -50px; border-color: black" class="btn" type="button" (click)="onUpload()">
-  Submit
-</button>
+<input type="file" (change)="onFileSelected($event.target.files)" style="display: none;" #fileInput />
+
+<div class="row">
+  <div class="col-lg-6 col-md-12 col-sm-12 ">
+    <span style= "margin-left: 75px;"><img class= "text.center" [src] = "imgUrl" style ="height:350px; width:350px;"></span>
+  </div>
 </div>
+
+<div class="row">
+  <div class="col-lg-6 col-md-6 col-sm-12 ">
+    <button style="width:120px; margin-left: 125px; border-color: black; align-items: center" class="btn" type="button" (click)="fileInput.click()">
+      Choose a File
+    </button>
+  </div>
+  <div class="col-lg-6 col-md-6 col-sm-12">
+    <button style="width:120px; margin-left: -50px; border-color: black" class="btn" type="button" (click)="onUpload()">
+      Submit
+    </button>
+  </div>
 </div>

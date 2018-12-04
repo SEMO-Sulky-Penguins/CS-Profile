@@ -10,26 +10,30 @@
 
         <form [formGroup]="profileForm" (ngSubmit)="save()">
           <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-12">
-                <!--<app-photo-upload></app-photo-upload>-->
-                <input type="file" (change)="onFileSelected($event.target.files)" 
-  style="display: none;" #fileInput />
-  <div class="row">
-      <div class="col-lg-6 col-md-12 col-sm-12 ">
-  <span style= "margin-left: 75px;"><img class= "text.center" [src] = "imgUrl" style ="height:350px; width:350px;"></span>
-</div></div>
-  <div class="row">
-      <div class="col-lg-6 col-md-6 col-sm-12 ">
-<button style="width:120px; margin-left: 125px; border-color: black; align-items: center" class="btn" type="button" (click)="fileInput.click()">
-  Choose a File
-</button></div>
-<div class="col-lg-6 col-md-6 col-sm-12">
-<button style="width:120px; margin-left: -50px; border-color: black" class="btn" type="button" (click)="onUpload()">
-  Submit
-</button>
-</div>
-</div>
-            </div>
+
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="row">
+                  <div class="col-lg-11 col-sm-11">
+                    <img class="text-center" [src]="imgUrl" width="350" height="350" />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-4 col-md-5 col-sm-12">
+                    <input #fileInput type="file" (change)="onFileSelected($event.target.files)" style="display: none;"/>
+                    <button class="btn" type="button" (click)="fileInput.click()">
+                      Choose a File
+                    </button>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-0"></div>
+                  <div class="col-lg-4 col-md-5 col-sm-12">
+                    <button class="btn" type="button" (click)="onUpload(fileInput.files)">
+                      Upload
+                    </button>
+                  </div>
+                </div>
+              </div>
+
               <div class="col-lg-6 col-md-6 col-sm-12">
               <div class="form-group group">
                 <p class="card-text">
