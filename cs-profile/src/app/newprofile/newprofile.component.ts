@@ -97,6 +97,7 @@ export class NewprofileComponent implements OnInit {
       profile.interests = this.getValue("interests");
       profile.organizations = this.getValue("organizations");
       profile.email = "none"; //placeholder
+      profile.imgPath = "../../assets/images/anon.jpg";
       this.profileService.addProfileAuth(profile);
       //.subscribe();
       alert("Profile created!");

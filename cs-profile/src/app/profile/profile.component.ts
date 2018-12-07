@@ -47,6 +47,19 @@ export class ProfileComponent implements OnInit {
     return temp;
   }
   
+  sendMail() : void{
+    try{
+      var name = encodeURI(document.forms["signUp"]["name"].value);
+      var fromEmail = encodeURI(document.forms["signUp"]["email"].value);
+      var msg = encodeURI(document.forms["signUp"]["msg"].value);
+      var body = "Name: " + name + "%0D%0A" + "Email: " + fromEmail + "%0D%0A" + msg;
+      var mail = "mailto:" + this.profile.email + "?subject=Message from CS-Profile&body=" + body;
+      window.location.href = mail;
+    } catch(e) {
+      console.log(e);
+    }
+  }
+
  /*
   getProfile(id : number) : void {
     this.profileService.getProfile(id)
