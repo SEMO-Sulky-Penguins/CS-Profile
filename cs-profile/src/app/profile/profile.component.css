@@ -14,3 +14,11 @@
     margin:0 0.25em;
     border-radius: 5px;
 }
+
+.btn {
+    width:200px; 
+    margin-right: 7.5px; 
+    margin-bottom: 7.5px;
+    border-color: black
+    
+}

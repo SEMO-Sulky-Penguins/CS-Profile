@@ -92,18 +92,18 @@ export class ProfileService {
     this._http.post<Profile>(this.profilesURL, profile, httpOptions).subscribe(response => {
       console.log(response);
     }, err => {
-      console.log(err)
+      console.log(err);
     });
   }
 
   deleteProfileAuth(id: number): void{
     const url = `${this.profilesURL}/${id}`;
     console.log("deleting profile: " + url);
-    this._http.delete(url, httpOptions).subscribe(/*response => {
+    this._http.delete(url, httpOptions).subscribe(response => {
       console.log(response);
     }, err =>{
-      console.log(err)
-    }*/);
+      console.log(err);
+    });
   }
   
 }
