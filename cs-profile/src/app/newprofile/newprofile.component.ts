@@ -97,6 +97,7 @@ export class NewprofileComponent implements OnInit {
       profile.languages = this.getValue("languages");
       profile.interests = this.getValue("interests");
       profile.organizations = this.getValue("organizations");
+      profile.email = "none"; //placeholder
       this.profileService.addProfileAuth(profile);
       //.subscribe();
       alert("Profile created!");

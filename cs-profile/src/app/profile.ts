@@ -13,4 +13,5 @@ export class Profile {
   languages: string;
   interests: string;
   organizations: string;
+  email: string;
 }
