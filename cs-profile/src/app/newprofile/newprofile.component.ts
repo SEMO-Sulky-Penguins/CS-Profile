@@ -4,8 +4,8 @@ import { Location } from '@angular/common';
 import { ProfileService }  from '../profile.service';
 import {Profile} from '../profile';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-
+import { HttpClient/*, HttpHeaders*/ } from '@angular/common/http';
+/*
 let token = localStorage.getItem("jwt");
 const httpOptions = {  
   headers: new HttpHeaders({
@@ -13,7 +13,7 @@ const httpOptions = {
     "Content-Type": "multipart/form-data",
   })
 };
-
+*/
 @Component({
   selector: 'app-newprofile',
   templateUrl: './newprofile.component.html',

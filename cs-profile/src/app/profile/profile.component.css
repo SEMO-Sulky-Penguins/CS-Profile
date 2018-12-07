@@ -16,9 +16,22 @@
 }
 
 .btn {
-    width:200px; 
+    width:200px;
     margin-right: 7.5px; 
     margin-bottom: 7.5px;
-    border-color: black
-    
+    border-color: black;
+    color:#fff !important;
+    overflow: hidden;
+}
+    .btn:hover{
+        color:#fff !important;
+    }
+
+#contact {
+    display: none;
+    background-color: #fff;
+    border: 1px solid #EA212D;
+    border-radius: 5px;
+    padding:1em;
+    margin-top:0.5em;
 }

@@ -6,6 +6,7 @@ import { Location } from '@angular/common';
 
 import { ProfileService }  from '../profile.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-profile',
@@ -46,6 +47,11 @@ export class ProfileComponent implements OnInit {
     }
     return temp;
   }
+
+  displayToggle(id) : void {
+    let el = document.getElementById(id);
+    el.style.display = (el.style.display == "none") ? "block" : "none";
+  }
   
   sendMail() : void{
     try{
@@ -55,6 +61,7 @@ export class ProfileComponent implements OnInit {
       var body = "Name: " + name + "%0D%0A" + "Email: " + fromEmail + "%0D%0A" + msg;
       var mail = "mailto:" + this.profile.email + "?subject=Message from CS-Profile&body=" + body;
       window.location.href = mail;
+      this.displayToggle('contact');
     } catch(e) {
       console.log(e);
     }
