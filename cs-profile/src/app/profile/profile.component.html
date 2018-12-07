@@ -22,36 +22,36 @@
             </p>
             <p class="card-text">
               Experience with Programming Language(s): <br/>
-              <span class="arrayItem">{{profile.languages}}</span>
-              <!--
-              <span *ngFor="let language of profile.languages">
+              <!--<span class="arrayItem">{{profile.languages}}</span>-->
+              
+              <span *ngFor="let language of arrayify(profile.languages)">
                 <span class="arrayItem">
                   {{language}}
                 </span>
               </span>
-              -->
+              
             </p>
             <p class="card-text">
               Interests: <br/>
-              <span class="arrayItem">{{profile.interests}}</span>
-              <!--
-              <span *ngFor="let interest of profile.interests">
+              <!--<span class="arrayItem">{{profile.interests}}</span>-->
+              
+              <span *ngFor="let interest of arrayify(profile.interests)">
                 <span class="arrayItem">
                   {{interest}}
                 </span>
               </span>
-              -->
+              
             </p>
             <p class="card-text">
               Organizations: <br/>
-              <span class="arrayItem">{{profile.organizations}}</span>
-              <!--
-              <span *ngFor="let organization of profile.organizations">
+              <!--<span class="arrayItem">{{profile.organizations}}</span>-->
+              
+              <span *ngFor="let organization of arrayify(profile.organizations)">
                 <span class="arrayItem">
                   {{organization}}
                 </span>
               </span>
-              -->
+              
             </p>
             <p class ="card-text">
               Email: <br/>
