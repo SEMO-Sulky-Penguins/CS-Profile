@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { JwtModule } from '@auth0/angular-jwt';
-import { AuthGuard } from './auth-guard/auth-guard.service';
-import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
   selector: 'app-root',

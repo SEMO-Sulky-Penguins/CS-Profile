@@ -5,9 +5,7 @@ import { ProfileListComponent} from './profile-list/profile-list.component';
 import { LoginComponent} from './login/login.component';
 import { ProfileDetailComponent } from './profile-detail/profile-detail.component';
 
-import { JwtModule } from '@auth0/angular-jwt';
 import { AuthGuard } from './auth-guard/auth-guard.service';
-import { JwtHelperService } from '@auth0/angular-jwt';
 import { NewprofileComponent } from './newprofile/newprofile.component';
 /*
 RouterModule.forRoot([

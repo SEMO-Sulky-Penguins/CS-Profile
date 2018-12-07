@@ -1,11 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { ProfileService }  from '../profile.service';
 import {Profile} from '../profile';
-import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { HttpClient, HttpHeaders, 
-    HttpRequest, HttpResponse, HttpEventType } from '@angular/common/http';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 let token = localStorage.getItem("jwt");
 const httpOptions = {  
@@ -31,7 +30,7 @@ export class NewprofileComponent implements OnInit {
     selectedFile : File = null;
   
     ngOnInit() {}
-  
+  /*
     onFileSelected(file:FileList) {
       this.selectedFile = file.item(0);
       var reader = new FileReader();
@@ -42,7 +41,7 @@ export class NewprofileComponent implements OnInit {
       reader.readAsDataURL(this.selectedFile);
     }
 
-  /*
+  
     onUpload() : void {
       let url = 'https://localhost:44305/api/images';
       const formData = new FormData();
@@ -56,7 +55,7 @@ export class NewprofileComponent implements OnInit {
       }
       // also update the path in the profile database
     }
-  */
+  
 
   onUpload(files) : void {
     if (files.length === 0)
@@ -72,7 +71,7 @@ export class NewprofileComponent implements OnInit {
       console.log(response);
     });
   }
-
+*/
   profileForm = new FormGroup({ 
     name: new FormControl("", [Validators.required/*, Validators.pattern('[a-zA-z0-9_\.]+@[a-zA-Z]+\.[a-zA-Z]+')*/]), 
     major: new FormControl(""/*, [Validators.required, Validators.pattern('[a-zA-z0-9_\.]+@[a-zA-Z]+\.[a-zA-Z]+')]*/),

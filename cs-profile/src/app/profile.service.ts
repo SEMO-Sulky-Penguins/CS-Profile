@@ -5,10 +5,7 @@ import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 import {HttpClient, HttpParams, HttpHeaders} from '@angular/common/http';
 
-import { JwtModule } from '@auth0/angular-jwt';
-import { AuthGuard } from './auth-guard/auth-guard.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 
 let token = localStorage.getItem("jwt");
 const httpOptions = {  

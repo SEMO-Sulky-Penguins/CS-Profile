@@ -6,8 +6,6 @@ import { Location } from '@angular/common';
 
 import { ProfileService }  from '../profile.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { splitAtColon } from '@angular/compiler/src/util';
-import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-profile',
@@ -42,7 +40,10 @@ export class ProfileComponent implements OnInit {
   }
 
   arrayify(nonArrayString: string): Array<string>{
-    var temp = nonArrayString.split(" ");
+    var temp = nonArrayString.split(",");
+    for(let i = 0; i < temp.length; i++){
+      temp[i] = temp[i].trim();
+    }
     return temp;
   }
   
