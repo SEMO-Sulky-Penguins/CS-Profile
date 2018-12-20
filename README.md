@@ -1,6 +1,9 @@
 # CS-Profile
 ### by Derek Mandl, Simone Ruffin, and Stephen Sladek
 
+##### Home Menu
+<img src="docs/images/Home.png" alt="home" width="75%" />
+
 ### Purpose
 This is a prototype profiler for CS students at SEMO. The purpose of this project is for learning Angular
 and for presenting a project for the CS483: Advanced Web Development course.
@@ -17,10 +20,28 @@ and for presenting a project for the CS483: Advanced Web Development course.
 - Phase 2: Modify phase 1 back-end to use Entity Framework for web api and test if your phase 1 front-end can communicate with the newly created back-end.
 - Phase 3: Add authentication to both front-end and back-end. 
 
+#### Part 3
+- Enhance the existing project by adding additional functionality.
+
 The backend of this project can be found here: [github.com/SEMO-Sulky-Penguins/CS-Profile-Backend](https://github.com/SEMO-Sulky-Penguins/CS-Profile-Backend)
 
+### Functionalities
+The functionalities of this project include a full CRUD implementation, JWT authentication, and the ability to send emails. The user can view profiles and send emails via the contact button by just visiting the website. Being able to add, update, and delete profiles requires a login though. We utilise a C# and .NET Core 2.1 backend to handle authentication. Our system uses EntityFramework to construct a SQL database automatically. Our profile information is also stored using said database.
+
+##### Details
+<img src="docs/images/Detail_with_Contact.png" alt="details" width="75%" />
+
+##### Login
+<img src="docs/images/Login.png" alt="login" width="75%" />
+
+##### Add a Profile
+<img src="docs/images/New_Profile.png" alt="add profile" width="75%" />
+
+##### Update a Profile
+<img src="docs/images/Update.png" alt="update profile" width="75%" />
+
 ### Setting up an Angular Project
-- Make sure you have npm installed beofre starting: `npm -v`
+- Make sure you have npm installed before starting: `npm -v`
 - Install angular: `npm install -g @angular/cli`
 	- You may need to add npm to your PATH. 
 	- Adding %AppData%\npm to the environment variables worked for me.
